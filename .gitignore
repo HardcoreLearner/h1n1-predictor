@@ -172,3 +172,17 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Data
+data/raw/
+data/processed/
+
+# Environnements virtuels
+venv/
+.env
+
+# MLflow
+mlruns/
+
+# Docker
+docker/.env
