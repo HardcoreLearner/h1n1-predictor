@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mlflow-tracking:
+    build:
+      context: ..  # Points to project root
+      dockerfile: docker/Dockerfile  # Relative path from context
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../mlruns:/app/mlruns
+      - ../data:/app/data
+      - ../models:/app/models
+    command: mlflow server --host 0.0.0.0 --backend-store-uri sqlite:///mlruns/mlflow.db --default-artifact-root file:///app/mlruns
